@@ -5,6 +5,7 @@ const themes = {
     tertiary: "#89C4E1",
     quaternary: "#58287F",
     quinary: "#1A0000",
+    quinaryVariant: "#360000",
   },
 };
 
