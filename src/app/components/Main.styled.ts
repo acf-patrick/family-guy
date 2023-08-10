@@ -11,6 +11,12 @@ const MainStyled = styled.main`
   img {
     width: 100%;
     height: 100%;
+    transform: scale(1) rotate(0deg);
+    transition: transform 250ms;
+
+    &:hover {
+      transform: scale(1.1) rotate(-5deg);
+    }
   }
 
   .container {

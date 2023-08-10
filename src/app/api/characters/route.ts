@@ -1,10 +1,9 @@
-import prisma from "@/lib/prisma";
 import { NextResponse } from "next/server";
+import { getAllCharacters } from "@/services/characters";
 
 export async function GET() {
-  const users = await prisma.character.findMany();
-
+  const characters = await getAllCharacters();
   return NextResponse.json({
-    characters: users,
+    characters,
   });
 }

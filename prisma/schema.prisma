@@ -13,7 +13,7 @@ datasource db {
 model Character {
   id          String   @id @default(uuid())
   name        String   @unique
-  slug        String
+  slug        String   @unique
   skills      String[]
   description String
   age         String

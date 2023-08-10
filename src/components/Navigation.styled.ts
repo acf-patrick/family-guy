@@ -7,6 +7,7 @@ const StyledNavigation = styled.div`
   position: sticky;
   top: 0;
   background: ${({ theme }) => theme.colors.quinaryVariant};
+  z-index: 2;
 
   a:last-of-type {
     display: flex;
@@ -15,12 +16,20 @@ const StyledNavigation = styled.div`
     color: ${({ theme }) => theme.colors.quinary};
     padding: 0.75rem 1rem;
     font-weight: bold;
-    border-radius: 5px;
+    border-radius: 7px;
     background: ${({ theme }) => theme.colors.secondary};
-    transition: background 500ms;
+    border-bottom: 5px solid
+      ${({ theme }) => darken(0.3, theme.colors.secondary)};
+    transform: translateY(0);
+    transition: transform 200ms;
 
     &:hover {
-      background: ${({ theme }) => darken(0.1, theme.colors.secondary)};
+      transform: translateY(-1px);
+    }
+
+    &:active {
+      transform: translateY(1px);
+      border-bottom: 5px solid ${({ theme }) => theme.colors.secondary};
     }
   }
 `;
