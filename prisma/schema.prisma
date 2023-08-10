@@ -6,12 +6,33 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
-model Record {
-  id          String @id @default(uuid())
-  title       String @unique
+model Character {
+  id          String   @id @default(uuid())
+  name        String   @unique
+  slug        String
+  skills      String[]
   description String
+  age         String
+  avatar      String
+  images      String[]
+  occupations String[]
+  Quote       Quote[]
+}
+
+model Quiz {
+  id             String   @id @default(uuid())
+  title          String   @unique
+  answers        String[]
+  correct_answer String
+}
+
+model Quote {
+  id          String    @id @default(uuid())
+  quote       String
+  character   Character @relation(fields: [characterId], references: [id])
+  characterId String
 }

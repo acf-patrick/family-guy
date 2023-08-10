@@ -7,6 +7,9 @@ const themes = {
     quinary: "#1A0000",
     quinaryVariant: "#360000",
   },
+  sizes: {
+    maxWidth: "720px"
+  }
 };
 
 export default themes;

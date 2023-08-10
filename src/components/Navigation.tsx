@@ -9,7 +9,7 @@ export default function Navigation() {
     <StyledNavigation>
       <Container>
         <Link href="/">
-          <Image src="/logo.png" alt="Family Guy" width={70} height={50} />
+          <Image src="/logo.png" alt="Family Guy" width={80} height={60} />
         </Link>
         <Link href="/quiz">
           <TbArrowBigRightFilled />
