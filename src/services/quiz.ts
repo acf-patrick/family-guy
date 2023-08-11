@@ -1,10 +1,16 @@
 import prisma from "@/lib/prisma";
-import { Quiz } from "@prisma/client";
 
 export async function getQuiz(id: string) {
   const quiz = await prisma.quiz.findUnique({
     where: { id },
   });
+  if (quiz) {
+    const { answers, ...data } = quiz;
+    return {
+      answers: answers.split("%"),
+      ...data,
+    };
+  }
 
   return quiz;
 }
@@ -12,7 +18,12 @@ export async function getQuiz(id: string) {
 /**
  * Get random quiz with different ID
  */
-export async function getRandomQuiz(id?: string): Promise<Quiz | null> {
+export async function getRandomQuiz(id?: string): Promise<{
+  id: string;
+  title: string;
+  answers: string[];
+  correct_answer: string;
+} | null> {
   const quizList = await prisma.quiz.findMany();
   const count = quizList.length;
 
@@ -24,7 +35,11 @@ export async function getRandomQuiz(id?: string): Promise<Quiz | null> {
       return await getRandomQuiz(id);
     }
 
-    return quiz;
+    const { answers, ...data } = quiz;
+    return {
+      answers: answers.split("%"),
+      ...data,
+    };
   }
 
   return null;

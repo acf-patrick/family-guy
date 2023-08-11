@@ -3,7 +3,14 @@ import { getQuotes } from "./quotes";
 
 export async function getAllCharacters() {
   const chars = await prisma.character.findMany();
-  return chars;
+  return chars.map((char) => {
+    return {
+      ...char,
+      skills: char.skills.split("%"),
+      images: char.skills.split("%"),
+      occupations: char.occupations.split("%"),
+    };
+  });
 }
 
 export async function getOneCharacterWithQuotes(slug: string) {
@@ -17,6 +24,9 @@ export async function getOneCharacterWithQuotes(slug: string) {
     const quotes = await getQuotes(char.id);
     return {
       ...char,
+      skills: char.skills.split("%"),
+      images: char.skills.split("%"),
+      occupations: char.occupations.split("%"),
       quotes,
     };
   }
