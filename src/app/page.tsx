@@ -1,5 +1,5 @@
 import { getAllCharacters } from "@/services/characters";
-import MainStyled from "./components/Main.styled";
+import StyledContainer from "./Container.styled";
 import { Container } from "@/components";
 import Link from "next/link";
 
@@ -7,7 +7,7 @@ export default async function Home() {
   const characters = await getAllCharacters();
 
   return (
-    <MainStyled>
+    <StyledContainer>
       <Container className="container">
         {characters.map((character) => (
           <Link key={character.id} href={`/characters/${character.slug}`}>
@@ -15,6 +15,6 @@ export default async function Home() {
           </Link>
         ))}
       </Container>
-    </MainStyled>
+    </StyledContainer>
   );
 }

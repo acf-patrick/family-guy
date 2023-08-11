@@ -2,7 +2,7 @@
 
 import styled from "styled-components";
 
-const MainStyled = styled.main`
+const StyledContainer = styled.main`
   a {
     overflow: hidden;
     border-radius: 5px;
@@ -36,4 +36,4 @@ const MainStyled = styled.main`
   }
 `;
 
-export default MainStyled;
+export default StyledContainer;
