@@ -3,7 +3,7 @@ import {
   getOneCharacterWithQuotes,
 } from "@/services/characters";
 import StyledContainer from "./Container.styled";
-import { redirect } from "next/navigation";
+import { notFound } from "next/navigation";
 
 export const dynamicParams = false;
 
@@ -20,7 +20,7 @@ export default async function CharacterPage({
   const datas = await getOneCharacterWithQuotes(params.slug);
 
   if (!datas) {
-    redirect("/404");
+    notFound();
   }
 
   const { quotes, ...character } = datas;

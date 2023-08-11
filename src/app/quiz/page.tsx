@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default async function QuizLayoutPage() {
   const quiz = await getRandomQuiz();
-
+  
   return (
     <StyledContainer>
       <div className="wallpaper">
@@ -14,8 +14,8 @@ export default async function QuizLayoutPage() {
           <Image
             src="/wallpaper.jpg"
             alt="family-guy"
-            width={320}
-            height={320}
+            width={700}
+            height={700}
           />
         </div>
       </div>

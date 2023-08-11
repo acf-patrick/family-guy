@@ -6,6 +6,7 @@ const themes = {
     quaternary: "#58287F",
     quinary: "#1A0000",
     quinaryVariant: "#360000",
+    error: "red",
   },
   sizes: {
     maxWidth: "720px",

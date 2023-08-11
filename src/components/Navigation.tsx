@@ -1,5 +1,5 @@
 import StyledNavigation from "./Navigation.styled";
-import { TbArrowBigRightFilled } from "react-icons/tb";
+import { TbArrowBigRightFilled, TbSquareRoundedLetterK } from "react-icons/tb";
 import { Container } from ".";
 import Image from "next/image";
 import Link from "next/link";
