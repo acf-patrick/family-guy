@@ -1,6 +1,5 @@
 "use client";
 
-import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { Navigation } from "@/components";
 import { ThemeProvider } from "styled-components";
@@ -8,11 +7,6 @@ import themes from "@/styles/theme";
 import StyledComponentsRegistry from "@/lib/registry";
 
 const inter = Inter({ subsets: ["latin"] });
-
-export const metadata: Metadata = {
-  title: "Family Guy",
-  description: "Learn more about Family Guy here!",
-};
 
 export default function RootLayout({
   children,

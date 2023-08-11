@@ -24,7 +24,7 @@ export default async function QuizLayoutPage() {
         <p>
           take this quiz to find out how much you know about the hit animated
           sitcom <span>Family Guy</span>. Test your knowledge of the characters,
-          the episodes, and the show's many pop culture references.
+          the episodes, and the show&apos;s many pop culture references.
         </p>
         <Link href={quiz ? `/quiz/${quiz.id}` : ""} className="button">
           <TbArrowBigRightFilled />
