@@ -47,7 +47,8 @@ const StyledContainer = styled.main`
 
     div {
       width: 480px;
-
+      height: 100%;
+      
       @media (max-width: 640px) {
         width: auto;
       }
