@@ -3,6 +3,8 @@
 import styled from "styled-components";
 
 const StyledContainer = styled.main`
+  background: black;
+
   a {
     overflow: hidden;
     border-radius: 5px;

@@ -6,9 +6,9 @@ export async function getAllCharacters() {
   return chars.map((char) => {
     return {
       ...char,
-      skills: char.skills.split("%"),
-      images: char.skills.split("%"),
-      occupations: char.occupations.split("%"),
+      skills: char.skills === "" ? [] : char.skills.split("%"),
+      images: char.images === "" ? [] : char.images.split("%"),
+      occupations: char.occupations === "" ? [] : char.occupations.split("%"),
     };
   });
 }
@@ -24,9 +24,9 @@ export async function getOneCharacterWithQuotes(slug: string) {
     const quotes = await getQuotes(char.id);
     return {
       ...char,
-      skills: char.skills.split("%"),
-      images: char.skills.split("%"),
-      occupations: char.occupations.split("%"),
+      skills: char.skills === "" ? [] : char.skills.split("%"),
+      images: char.images === "" ? [] : char.images.split("%"),
+      occupations: char.occupations === "" ? [] : char.occupations.split("%"),
       quotes,
     };
   }
