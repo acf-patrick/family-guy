@@ -7,7 +7,7 @@ export async function getQuiz(id: string) {
   if (quiz) {
     const { answers, ...data } = quiz;
     return {
-      answers: answers.split("%"),
+      answers: answers === "" ? [] : answers.split("%"),
       ...data,
     };
   }
@@ -37,7 +37,7 @@ export async function getRandomQuiz(id?: string): Promise<{
 
     const { answers, ...data } = quiz;
     return {
-      answers: answers.split("%"),
+      answers: answers === "" ? [] : answers.split("%"),
       ...data,
     };
   }
