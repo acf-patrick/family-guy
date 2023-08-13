@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "postinstall": "npx prisma migrate deploy && npx prisma generate",
+    "postinstall": "npx prisma migrate deploy && npx prisma generate && npx prisma db seed",
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
@@ -26,6 +26,10 @@
   },
   "devDependencies": {
     "@types/styled-components": "^5.1.26",
-    "prisma": "^5.1.1"
+    "prisma": "^5.1.1",
+    "ts-node": "^10.9.1"
+  },
+  "prisma": {
+    "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} src/lib/seed.ts"
   }
 }

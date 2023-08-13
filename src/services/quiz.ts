@@ -4,13 +4,6 @@ export async function getQuiz(id: string) {
   const quiz = await prisma.quiz.findUnique({
     where: { id },
   });
-  if (quiz) {
-    const { answers, ...data } = quiz;
-    return {
-      answers: answers === "" ? [] : answers.split("%"),
-      ...data,
-    };
-  }
 
   return quiz;
 }
@@ -35,11 +28,7 @@ export async function getRandomQuiz(id?: string): Promise<{
       return await getRandomQuiz(id);
     }
 
-    const { answers, ...data } = quiz;
-    return {
-      answers: answers === "" ? [] : answers.split("%"),
-      ...data,
-    };
+    return quiz;
   }
 
   return null;
