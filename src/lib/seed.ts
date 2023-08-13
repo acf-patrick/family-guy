@@ -783,7 +783,10 @@ const quotes = [
 const prisma = new PrismaClient();
 
 async function main() {
+  await prisma.quiz.deleteMany();
+  await prisma.quote.deleteMany();
   await prisma.character.deleteMany();
+  
   for (const char of characters) {
     const { id, ...data } = char;
     await prisma.character.create({
@@ -791,7 +794,6 @@ async function main() {
     });
   }
 
-  await prisma.quote.deleteMany();
   for (const quote of quotes) {
     const char_name = characters.find(
       (char) => char.id === quote.character_id
@@ -808,7 +810,6 @@ async function main() {
     });
   }
 
-  await prisma.quiz.deleteMany();
   for (const obj of quiz) {
     const { id, ...data } = obj;
     await prisma.quiz.create({
