@@ -4,8 +4,6 @@ import StyledContainer from "./components/Container.styled";
 import { getQuiz } from "@/services/quiz";
 
 export default async function QuizPage({ params }: { params: { id: string } }) {
-  if (!params.id) return <></>;
-
   const quiz = await getQuiz(params.id);
   if (!quiz) {
     notFound();
